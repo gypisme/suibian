@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="textml; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=640, user-scalable=no, target-densityDpi=device-dpi">
+<meta name="screen-orientation" content="portrait">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>今今乐道读书会</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/jinjin-mobile.css"/>
+<link href="css/mobile-SQF.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/custom.modernizr.js"></script>
+<script src="js/language.js"></script>
+<style>
+    @-webkit-keyframes btn{
+	0%{
+		opacity:1;
+		-webkit-transform:translate(0,0px);	
+	}	
+	60%{
+		opacity:0.5;
+		-webkit-transform:translate(-40px,40px);		
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}	
+    .hoe{width:100%;height: 100%;background: rgba(255,52,52,1);z-index: 666;}
+    .sss{width: 90%; font-size: 0.4rem;line-height: 0.4rem;}
+</style>
+<script>
+    $(document).ready(function(){
+        $('.hx').click(function(){
+            this.className = 'hx';
+            $('.hoe').width($(window).width());
+            $('.hoe').height($(window).height());
+            $('.hoe').css('background','rgba(255,51,51,0.8)');
+            $('.hoe').animate({opacity: 1 }, 10);
+            $('.msho').animate({opacity: 0.9 }, 50);
+            $('.hoe').show();
+            $('.msho').show();
+            $('.msho').width($(window).width());
+            $('.msho').height($(window).height());
+            OpenMask();
+        });
+        $('.hx1').click(function(){
+            this.className = 'hx1 hx_active';
+            $('.hoe').animate({opacity: 0 }, 10);
+            $('.hoe').hide();
+            $('.msho').hide();
+            CloseMask();
+        });
+    })
+</script>
+</head>
+
+<body>
+    <div class="hoe">
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx1 hx_active">
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          <ul class="row en">
+              <li><a href="index.html" class="aa1">HOME</a></li>
+              <li><a href="SX_J.html">What are the best minds?</a></li>
+              <li><a href="FW_J.html">How Do We Provide Knowledge Service?</a></li>
+              <li><a href="QG_J.html">Big Data + Art And Science</a></li>
+          </ul>
+          <ul class="row ch" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">主页</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">什么是最好的思想</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">怎样提供知识服务?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">大数据加大情感</a></li>
+          </ul>
+          <ul class="row fr" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">即将上线</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">敬请</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">期待?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">...</a></li>
+          </ul>
+    </div>
+    <div class="msho"></div>
+<div id="page" role="main">
+      <header id="header">
+          <h1 class="logo">
+              <a href="javascript:;"></a>
+          </h1>
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          
+          <div class="row en">
+          <!-- 中英文法文切换按钮 -->
+              <div class="qieh">
+                  <div class="chinese">CH</div>
+                  <div class="english">EN</div>
+                  <div class="French">FR</div>
+              </div>
+          </div>
+        <!-- 中文 -->
+        <div class="row ch" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">中语</div>
+            <div class="english">英语</div>
+            <div class="French">法语</div>
+          </div>
+        </div>
+        <div class="row fr" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">CH</div>
+            <div class="english">EN</div>
+            <div class="French">FR</div>
+          </div>
+        </div>
+        <div class="mbl">
+            
+        </div>
+      </header>
+      
+      <div class="bj">
+          <img src="images/s_bj.png" alt="">
+      </div>
+      
+      <!--英文-->
+      <div class="fw1 row en">
+          <h1>How Do We Provide Knowledge Service?</h1>
+          <h2 class="xian2"></h2>
+          <p>Simulcast lectures from 1 city to 100.</p>
+          <p>Including the hearts of global innovation like Silicon Valley and Israel.</p>
+          <p>First-rate business school-inspired reader’s club. Real-time interaction, enjoying the same kind of opportunities like lunch with Buffett.</p>
+      </div>
+      <!--中文-->
+      <div class="fw1 row ch" style="display:none;">
+          <h1>怎样提供知识服务？</h1>
+          <h2 class="xian2"></h2>
+          <p>一城上课，百城巨屏直播</p>
+          <p>直连硅谷、以色列等全球创新心脏</p>
+          <p>世界顶级商学院式的读书会，实时互动，获得与巴菲特午餐同样尊崇的交流机会</p>
+      </div>
+      
+      <!--英文-->
+      <div class="fw2 row en">
+          <h1>Breaking down the barrier between online and offline</h1>
+          <p>The online product "JIN.DEPTH" App features systematic learning solutions that make use of confetti time</p>
+          <p>Courses covering 9 sectors, taught by thousands of industry talents</p>
+          <p>Putting forward the most insightful solutions to the most professional questions</p>
+      </div>
+      <div class="im1 row en">
+          <img src="images/xiantiao2.png" alt="">
+      </div>
+      
+      <!--中文-->
+      <div class="fw2 row ch" style="display:none;">
+          <h1>线上、线下打通</h1>
+          <p>线上产品“今今乐道”App<br>聚焦碎片时间，系统学习</p>
+          <p>九大领域千位垂直行业达人定制课程，一仗打通</p>
+          <p>为最专业的问题提供最入骨的解读</p>
+      </div>
+      <div class="im2 row ch" style="display:none;">
+          <img src="images/xiantiao.png" alt="">
+      </div>
+      
+      <!--英文-->
+      <footer class="row en">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+      <!--中文-->
+      <footer class="row ch"  style="display:none;">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

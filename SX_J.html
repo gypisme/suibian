@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="textml; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=640, user-scalable=no, target-densityDpi=device-dpi">
+<meta name="screen-orientation" content="portrait">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>今今乐道读书会</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/mobile-SQF.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/jinjin-mobile.css"/>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/custom.modernizr.js"></script>
+<script src="js/language.js"></script>
+<style>
+    @-webkit-keyframes btn{
+	0%{
+		opacity:1;
+		-webkit-transform:translate(0,0px);	
+	}	
+	60%{
+		opacity:0.5;
+		-webkit-transform:translate(-40px,40px);		
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}	
+    .hoe{width:100%;height: 100%;background: rgba(255,52,52,1);z-index: 666;}
+    .sss{width: 90%; font-size: 0.4rem;line-height: 0.4rem;}
+</style>
+<script>
+    $(document).ready(function(){
+        $('.hx').click(function(){
+            this.className = 'hx';
+            $('.hoe').width($(window).width());
+            $('.hoe').height($(window).height());
+            $('.hoe').css('background','rgba(255,51,51,0.8)');
+            $('.hoe').animate({opacity: 1 }, 10);
+            $('.msho').animate({opacity: 0.9 }, 50);
+            $('.hoe').show();
+            $('.msho').show();
+            $('.msho').width($(window).width());
+            $('.msho').height($(window).height());
+            OpenMask();
+        });
+        $('.hx1').click(function(){
+            this.className = 'hx1 hx_active';
+            $('.hoe').animate({opacity: 0 }, 10);
+            $('.hoe').hide();
+            $('.msho').hide();
+            CloseMask();
+        });
+    })
+</script>
+</head>
+
+<body>
+    <div class="hoe">
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx1 hx_active">
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          <ul class="row en">
+              <li><a href="index.html" class="aa1">HOME</a></li>
+              <li><a href="SX_J.html">What are the best minds?</a></li>
+              <li><a href="FW_J.html">How Do We Provide Knowledge Service?</a></li>
+              <li><a href="QG_J.html">Big Data + Art And Science</a></li>
+          </ul>
+          <ul class="row ch" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">主页</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">什么是最好的思想</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">怎样提供知识服务?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">大数据加大情感</a></li>
+          </ul>
+          <ul class="row fr" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">即将上线</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">敬请</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">期待?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">...</a></li>
+          </ul>
+    </div>
+    <div class="msho"></div>
+<div id="page" role="main">
+      <header id="header">
+          <h1 class="logo">
+              <a href="javascript:;"></a>
+          </h1>
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          
+          <div class="row en">
+          <!-- 中英文法文切换按钮 -->
+              <div class="qieh">
+                  <div class="chinese">CH</div>
+                  <div class="english">EN</div>
+                  <div class="French">FR</div>
+              </div>
+          </div>
+        <!-- 中文 -->
+        <div class="row ch" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">中语</div>
+            <div class="english">英语</div>
+            <div class="French">法语</div>
+          </div>
+        </div>
+        <div class="row fr" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">CH</div>
+            <div class="english">EN</div>
+            <div class="French">FR</div>
+          </div>
+        </div>
+        <div class="mbl">
+            
+        </div>
+      </header>
+      
+      <div class="bj">
+          <img src="images/s_bj.png" alt="">
+      </div>
+      
+      <!--英文-->
+      <div class="sx1 row en">
+         <div class="ssx">
+             <h1>What are the best minds?</h1>
+             <h2 class="xian1"></h2>
+             <p>Using only classic works to help you make sense of the present.</p>
+             <p>Learn marketing techniques from Greek mythology; Learn leadership skills from Roman stories; Understand organizational structure from reading “Heroes of the Marshes”.</p>
+             <p>12 humanity lessons from the Oscar classics.</p>
+             <p>Discovering resonance between classic works and modern-day management.</p>
+         </div>
+      </div>
+      <!--中文-->
+      <div class="sx1 row ch" style="display:none;">
+         <div class="ssx">
+             <h1>什么是最好的思想？</h1>
+             <h2 class="xian1"></h2>
+             <p>只用最经典的著作为你注解当下</p>
+             <p>读希腊神话学营销；罗马人的故事学领导力；读水浒传学组织架构</p>
+             <p>奥斯卡经典告诉你的十二堂人性课</p>
+             <p>从沉淀营养最高的经典中寻找与现代管理共鸣</p>
+         </div>
+      </div>
+      
+      <!--英文-->
+      <div class="sx2 row en">
+          <h1>Knowledge</h1>
+          <p><i>Easy to remember</i><br>Into ears, into hearts. Ever-lasting memory even after you leave the classroom. </p>
+          <p><i>Easy to repeat</i><br>Once you learn it, your managers, employees and friends can learn it, too.</p>
+          <p><i>Systematic</i><br>Profiting from confetti time, but no confetti-like inspiration. Learn systematically, structure your knowledge matrix.</p>
+      </div>
+      <!--中文-->
+      <div class="sx2 row ch sx22" style="display:none;">
+          <h1>知 识</h1>
+          <p><i>记得住</i><br>不仅现场有货，而且一时入耳，终身入心，离场永远铭记</p>
+          <p><i>能转述</i><br>不仅自己学会，而且能传递给高管、员工、朋友</p>
+          <p><i>成系统</i><br>充分利用碎片时间，但不提供碎片式启发;<br>只完成系统学习，结构化知识体系</p>
+      </div>
+      
+      
+      
+      
+      <!--英文-->
+      <footer class="row en">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+      <!--中文-->
+      <footer class="row ch"  style="display:none;">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,543 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="textml; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=640, user-scalable=no, target-densityDpi=device-dpi">
+<meta name="screen-orientation" content="portrait">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<title>今今乐道读书会</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/jinjin-mobile.css"/>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/custom.modernizr.js"></script>
+<script src="js/language.js"></script>
+<style>
+    @-webkit-keyframes btn{
+	0%{
+		opacity:1;
+		-webkit-transform:translate(0,0px);	
+	}	
+	60%{
+		opacity:0.5;
+		-webkit-transform:translate(-40px,40px);		
+	}
+	100%{
+		opacity:1;
+		-webkit-transform:translate(0,0);
+	}	
+    .video{width: 100%;height: 0;box-sizing: border-box;overflow: hidden;position: relative;opacity: 1;transition:1s;background: url(images/h_bj.png)center center;}
+    #video1{width: 100%;height: auto;transition:all 1s;position: absolute;left: 0; top: -3.6rem;}
+}
+    .hoe{width:100%;height: 100%;background: rgba(255,52,52,1);z-index: 666;}
+    .sss{width: 90%; font-size: 0.4rem;line-height: 0.4rem;}
+</style>
+<script>
+    $(document).ready(function(){
+       
+        var navH = $(".dw").offset().top;
+        var nav2H = $(".ms").offset().top;
+        var nav3H = $(".sige").offset().top;
+        var nav4H = $(".xdx").offset().top;
+        var nav5H = $(".our").offset().top;
+        var nav6H = $(".msk").offset().top;
+        //滚动条事件
+        $(window).scroll(function(){
+            var scroH = $(this).scrollTop();
+            if(scroH>navH-$(".dw").height()){
+                $('.d1').animate({'left':0},400);
+                $('.d2').animate({'right':0},600);
+                $('.d1').animate({opacity: 1 }, 400);
+                $('.d2').animate({opacity: 1 }, 600);
+            }
+            if(scroH>nav2H-$(".ms").height()){
+                $('.liis').animate({'left':0},900);
+                $('.lk_lis').animate({'right':0},900);
+                $('.liis').animate({opacity: 1 }, 1000);
+                $('.lk_lis').animate({opacity: 1 }, 1500);
+            }
+            if(scroH>nav3H-$(".sige").height()){
+                $('.ll').animate({'left':0},900);
+                $('.ll2').animate({'right':0},900);
+                $('.ll3').animate({'left':0},900);
+                $('.ll4').animate({'right':0},900);
+                $('.ll').animate({opacity: 1 }, 1000);
+                $('.ll2').animate({opacity: 1 }, 1500);
+                $('.ll3').animate({opacity: 1 }, 2000);
+                $('.ll4').animate({opacity: 1 }, 2500);
+            }
+            if(scroH>nav4H-$(".xdx").height()){ $('.wenzi').css('background','rgba(255,51,51,0.8)')
+            }else if(scroH<=nav4H-$(".xdx").height()){ $('.wenzi').css('background','rgba(255,255,255,0.5)')
+            }
+            //视频video
+            if(scroH>nav5H-$(".our").height()){ 
+                $('.video').animate({'height':360});
+                $('.video video').animate({'height':360});
+                $('.video').animate({'top':0});
+                $('.video').animate({opacity: 1 }, 1000);
+                $('.video video').show();
+            }
+            if(scroH>nav5H-$(".video").height()){ 
+                $('.video').animate({height:'toggle(slow)'});
+            }
+            //----------------------------------//
+            if(scroH>nav5H-$(".ms").height()){ $('.wenzi2').css('background','rgba(255,51,51,0.8)')
+            }else if(scroH<=nav5H-$(".video").height()){ $('.wenzi2').css('background','rgba(255,255,255,0.5)')
+            }
+            
+            if(scroH>(nav6H-$(".msk").height())){ $('.wenzi3').css('background','rgba(255,51,51,0.8)')
+            }else if(scroH<=nav6H-$(".msk").height()){ $('.wenzi3').css('background','rgba(255,255,255,0.5)')
+            }
+        });
+        $('.hx').click(function(){
+            this.className = 'hx';
+            $('.hoe').width($(window).width());
+            $('.hoe').height($(window).height());
+            $('.hoe').css('background','rgba(255,51,51,0.8)');
+            $('.hoe').animate({opacity: 1 }, 10);
+            $('.msho').animate({opacity: 0.9 }, 50);
+            $('.hoe').show();
+            $('.msho').show();
+            $('.msho').width($(window).width());
+            $('.msho').height($(window).height());
+            OpenMask();
+        });
+        $('.hx1').click(function(){
+            this.className = 'hx1 hx_active';
+            $('.hoe').animate({opacity: 0 }, 10);
+            $('.hoe').hide();
+            $('.msho').hide();
+            CloseMask();
+        });
+        var handler = function () {
+            event.preventDefault();
+            event.stopPropagation();
+        };
+        var OpenMask = function(){
+            document.body.addEventListener('touchmove',handler,false);
+            document.body.addEventListener('wheel',handler,false);
+        };
+        var CloseMask = function(){
+            document.body.removeEventListener('touchmove',handler,false);
+            document.body.removeEventListener('wheel',handler,false);
+        };
+    })
+</script>
+</head>
+
+<body>
+    <div class="hoe">
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx1 hx_active">
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          <ul class="row en">
+              <li><a href="index.html" class="aa1">HOME</a></li>
+              <li><a href="SX_J.html">What are the best minds?</a></li>
+              <li><a href="FW_J.html">How Do We Provide Knowledge Service?</a></li>
+              <li><a href="QG_J.html">Big Data + Art And Science</a></li>
+          </ul>
+          <ul class="row ch" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">主页</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">什么是最好的思想</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">怎样提供知识服务?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">大数据加大情感</a></li>
+          </ul>
+          <ul class="row fr" style="display:none;">
+              <li><a href="index.html" class="aa1" onclick="Link(this);return false;">即将上线</a></li>
+              <li><a href="SX_J.html" onclick="Link(this);return false;">敬请</a></li>
+              <li><a href="FW_J.html" onclick="Link(this);return false;">期待?</a></li>
+              <li><a href="QG_J.html" onclick="Link(this);return false;">...</a></li>
+          </ul>
+    </div>   
+    <div class="msho"></div>
+<div id="page" role="main">
+      <header id="header">
+          <h1 class="logo">
+              <a href="javascript:;"></a>
+          </h1>
+          <div class="qiehuan">
+            <a href="javascript:;" class="hx">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+          </div>
+          
+          <div class="row en">
+          <!-- 中英文法文切换按钮 -->
+              <div class="qieh">
+                  <div class="chinese">CH</div>
+                  <div class="english">EN</div>
+                  <div class="French">FR</div>
+              </div>
+          </div>
+        <!-- 中文 -->
+        <div class="row ch" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">中语</div>
+            <div class="english">英语</div>
+            <div class="French">法语</div>
+          </div>
+        </div>
+        <div class="row fr" style="display:none;">
+          <!-- 中英文切换按钮 -->
+          <div class="qieh">
+            <div class="chinese">CH</div>
+            <div class="english">EN</div>
+            <div class="French">FR</div>
+          </div>
+        </div>
+        <div class="mbl">
+            
+        </div>
+      </header>
+      
+      <div class="bj">
+          <img src="images/s_bj.png" alt="">
+      </div>
+      
+      <!--英文-->
+      <div class="dw row en">
+          <p>J I N . D E P T H</p>
+          <p>READER'S CLUB</p>
+          <p></p>
+          <p>Make a date with </p>
+          <p>the world's best minds</p>
+      </div>
+      <!--法语-->
+      <div class="dw row fr" style="display:none;">
+          <p>法语</p>
+          <p>即将上线</p>
+          <p></p>
+          <p>待续</p>
+          <p>......</p>
+      </div>
+      <!--中文-->
+      <div class="dw row ch dw11" style="display:none;">
+          <p>今 今 乐 道</p>
+          <p>读 书 会</p>
+          <p></p>
+          <p></p>
+          <p>约会世界最好的思想</p>
+      </div>
+      
+      <!--英文-->
+      <div class="wb row en">
+          <p>IF YOU HAVE THE</p>
+          <p> FOLLOWING HABITS, PLEASE</p> 
+          <p>IGNORE THIS MESSAGE.</p>
+      </div>
+      <!--中文-->
+      <div class="wb row ch wb1" style="display:none;">
+          <p class="p2">如果你有以下习惯 ，请屏蔽这条信息。</p> 
+      </div>
+      
+      <!--英文-->
+      <div class="wz row en">
+          <span class="d1"></span>
+          <p class="d2">Thinking that you have made enough money; feeling that you have exhausted the desire to  fight.</p>
+          <span class="d1"></span>
+          <p class="d2">Having bought a cluster of online courses, you end up watching only 10% of it and feel satisfied.</p>
+          <span class="d1"></span>
+          <p class="d2">Feeling that today's business education already meets every need: vanity aside, you get to exchange room cards with girl classmates.</p>
+      </div>
+      <!--中文-->
+       <div class="wz row ch" style="display:none;">
+          <span class="d1"></span>
+          <p class="d2">觉得钱已经赚够了；觉得血性已经释放光了；忙于低头拉车，不愿抬头看路；</p>
+          <span class="d1"></span>
+          <p class="d2">屯了一大堆知识电商，虽然只消费了10%，可依然觉得很爽；</p>
+          <span class="d1"></span>
+          <p class="d2">觉得现有商学院教育已能完全满足需求，除了装逼还能和女同学换房卡。</p>
+      </div>
+      
+      <!--英文-->
+      <div class="xdx row en">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi">
+              <p>If not, please find out more about our reader's club, which is quickly spreading across China.</p>
+          </div>
+      </div>
+      <!--中文-->
+      <div class="xdx row ch" style="display:none;">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi wen1">
+              <p>如果没有上述习惯，请继续了解我们已经在全国铺开的读书会大业。</p>
+          </div>
+      </div>
+      
+      <!--英文-->
+      <div class="jin row en">
+          <p>Jin.depth Reader's Club </p>
+          <p>is a unique learning "force field" that loads the bullets, and brings the Musikverein and the Louvre of business education to you.</p>
+      </div>
+      <!--中文-->
+      <div class="jin row ch jin2" style="display:none;">
+          <p>今今乐道读书会</p>
+          <p>是不一样的“学习立场”，将子弹上膛，将商学中的金色大厅和卢浮宫搬到你的身边。</p>
+      </div>
+      
+      <!--英文-->
+      <div class="our row en">
+          <p>Our pivots are clear :</p>
+          <p>Make A Date With The World's Best Minds, Activate Cross-industry Networking</p>
+      </div>
+      <!--中文-->
+      <div class="our row ch our2" style="display:none;">
+          <p>我们的宗旨 :</p>
+          <p>我们只做一件事：约会世界最好的思想，撬动跨界社交。</p>
+      </div>
+      
+<!--video-->
+     <!--英文-->
+      <div class="video row en">
+          <video poster="images/h_bj.png" autoplay style="width:100%;display:none;" id="video1">
+              <source src="http://img.besttoptoday.com/jinjin-wangzhan/video/jjld_dsh.mp4">
+          </video>
+      </div>
+      <!--中文-->
+      <div class="video row ch" style="display:none;">
+          <video poster="images/h_bj.png" style="width:100%;display:none;" autoplay="false" id="video">
+              <source src="http://imgcdn.besttoptoday.com/jinjin-wangzhan/video/jjld_dshch.mp4">
+          </video>
+      </div>
+<!--video-->
+     
+     <!--英文-->
+      <div class="ms row en row en">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi2">
+              <p>What are the best minds?</p>
+              <p>Inviting only those who have fought real wars on battlefields to teach</p>
+          </div>
+      </div>
+      <!--中文-->
+      <div class="ms row ch" style="display:none;">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi2 wen2">
+              <p>什么是最好的思想？</p>
+              <p>只请打过仗的人教你如何在战场上生存</p>
+          </div>
+      </div>
+      
+      <!--英文-->
+      <div class="box_con row en">
+          <ul class="liis">
+              <li>
+                  <img src="images/liu_chuanzhi.png">
+                  <p>LIU, Chunazhi</p>
+              </li>
+              <li>
+                  <img src="images/jack_ma.png">
+                  <p>MA, Yun</p>
+              </li>
+              <li>
+                  <img src="images/liu_qiangdong.png">
+                  <p>LIU, Qiangdong</p>
+              </li>
+              <li>
+                  <img src="images/chen_chunhua.png">
+                  <p>CHEN, Chunhua</p>
+              </li>
+              <li>
+                  <img src="images/shi_yuzhu.png">
+                  <p>SHI, Yuzhu</p>
+              </li>
+          </ul>
+          <h4 class="tk_lis">Their combined value is worth over 1 trillion RMB; combined time spent on founding businesses exceeds 300 years.</h4>
+          <p class="t_lan"></p>
+          <ul class="lk_lis">
+              <li>
+                  <img src="images/yu_dan.png">
+                  <p>YU, Dan</p>
+              </li>
+              <li>
+                  <img src="images/lang_lang.png">
+                  <p>LANG, Lang</p>
+              </li>
+              <li>
+                  <img src="images/yi_zhongtian.png">
+                  <p>YI, Zhongtian</p>
+              </li>
+          </ul>
+          <h4>Inviting only the most sophisticated people to elevate your taste. Trendsetting soul-explorers will help cultivate your inner wilderness.</h4>
+      </div>
+      <!--中文-->
+      <div class="box_con row ch" style="display:none;">
+          <ul class="liis">
+              <li>
+                  <img src="images/liu_chuanzhi.png">
+                  <p>柳传志</p>
+              </li>
+              <li>
+                  <img src="images/jack_ma.png">
+                  <p>马云</p>
+              </li>
+              <li>
+                  <img src="images/liu_qiangdong.png">
+                  <p>刘强东</p>
+              </li>
+              <li>
+                  <img src="images/chen_chunhua.png">
+                  <p>陈春花</p>
+              </li>
+              <li>
+                  <img src="images/shi_yuzhu.png">
+                  <p>史玉柱</p>
+              </li>
+          </ul>
+          <h4 class="tk_lis">总身价超过一万亿人民币的财富创造者，灌顶累积300年的创业功力。</h4>
+          <p class="t_lan"></p>
+          <ul class="lk_lis">
+              <li>
+                  <img src="images/yu_dan.png">
+                  <p>于丹</p>
+              </li>
+              <li>
+                  <img src="images/lang_lang.png">
+                  <p>郎朗</p>
+              </li>
+              <li>
+                  <img src="images/yi_zhongtian.png">
+                  <p>易中天</p>
+              </li>
+          </ul>
+          <h4>只请最具格调的人带你提升品位，借最有范儿的灵魂探索者，开拓内心荒野。</h4>
+      </div>
+      
+      <!--英文-->
+      <div class="msk row en">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi3">
+              <p>What is cross-industry networking?</p>
+              <p>Greet world-wide champions</p>
+          </div>
+      </div>
+      <!--中文-->
+      <div class="msk row ch" style="display:none;">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi3 wen3">
+              <p>什么是跨界社交？</p>
+              <p>广交天下豪杰</p>
+          </div>
+      </div>
+      
+      <!--英文-->
+      <div class="newwork row en">
+          <p>What entrepreneurs from second-tier cities need most are not entrepreneurs based in the same city, but doctors from best hospitals, and principals of highly-regarded universities in first-tier cities.</p>
+      </div>
+      <!--中文-->
+      <div class="newwork row ch newwork1" style="display:none;">
+          <p>二线城市的知名企业家，最需要的朋友不是同城企业家，而是一线城市三甲医院医生，名校校长。全球顶级投资人最需要的项目不是冰面上的天鹅，而是冰面下的大鱼。</p>
+      </div>
+      
+      <!--英文-->
+      <div class="sige row en">
+         <h3>Core Methods</h3>
+          <ul class="hs_sx">
+              <li class="ll">
+                  <h4><i>A</i> daptable</h4>
+                  <p>and "me-centered" learning method</p>
+              </li>
+              <li class="ll2">
+                  <h4><i>T</i> angible</h4>
+                  <p>and accessible mentors</p>
+              </li>
+              <li class="ll3">
+                  <h4><i>R</i> are</h4>
+                  <p>and must-know knowledge; opposing banal thoughts</p>
+              </li>
+              <li class="ll4">
+                  <h4><i>A</i> romatic</h4>
+                  <p>charismatic leadership revamping system</p>
+              </li>
+          </ul>
+          <span class="sbj"></span>
+      </div>
+      <!--中文-->
+      <div class="sige row ch" style="display:none;">
+         <h3>核 心 方 法</h3>
+          <ul class="hs_sx hs_sx1">
+              <li class="ll">
+                  <h4>活</h4>
+                  <p>灵活机动，操之在我学习方式</p>
+              </li>
+              <li class="ll2">
+                  <h4>色</h4>
+                  <p>导师IP真实可触摸</p>
+              </li>
+              <li class="ll3">
+                  <h4>生</h4>
+                  <p>必须要了解的生知识，与百度为敌</p>
+              </li>
+              <li class="ll4">
+                  <h4>香</h4>
+                  <p>领导者魅力重塑体系，人格自带香气</p>
+              </li>
+          </ul>
+          <span class="sbj"></span>
+      </div>
+      
+      <!--英文-->
+      <div class="flor row en">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi4">
+              <p>JIN.DEPTH <br> READER'S CLUB </p>
+              <p>has sprawled across China. <br> We look forward to your participation.</p>
+          </div>
+      </div>
+      <!--中文-->
+      <div class="flor row ch" style="display:none;">
+<!--          <img src="images/h_bj.png" alt="">-->
+          <div class="wenzi4 wen4">
+              <p>今今乐道读书会</p>
+              <p>读书会大业已经在全国铺开，<br>我们期待您的加入！</p>
+          </div>
+      </div>
+      
+      <!--英文-->
+      <footer class="row en">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+      <!--中文-->
+      <footer class="row ch"  style="display:none;">
+          <div class="foot">
+              <h1 class="logo2">
+                  <a href="javascript:;"></a>
+              </h1>
+              <p>©-2017 DG Group <br> Contact: dg@dggroup.cn</p>
+              <div class="weixin">
+                  <span><img src="images/wechat_icon.png" alt=""></span>
+                  <span>TTTalkingShow</span>
+              </div>
+          </div>
+      </footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
